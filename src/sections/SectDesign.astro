@@ -1,0 +1,37 @@
+---
+import { getImage } from "astro:assets";
+import Title from "../components/Title.astro";
+import bg from "../img/pictures/3rd-section-img.png";
+const optimizedBackground = await getImage({ src: bg, format: "webp" });
+---
+
+<section style=`background-image: url(${optimizedBackground.src});`>
+    <Title first="Modern Design" second="Our Specis" />
+    <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+</section>
+
+<style>
+    section {
+        background-color: #ffe49d;
+        min-height: 100vh; 
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 0;
+        background-repeat: no-repeat;
+        background-size: auto 50%;
+        background-position: bottom right;
+    }
+    .info {
+        font-size: 30px;
+        font-weight: 300;
+        max-width: 500px;
+    }
+    @media (max-width: 1200px) {
+        section {
+            flex-direction: column;
+            justify-content: start;
+        }
+    }
+</style>

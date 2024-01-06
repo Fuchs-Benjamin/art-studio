@@ -1,0 +1,29 @@
+---
+const { first, second } = Astro.props;
+---
+
+<h2>
+    <span class="first">{first}</span>
+    <span class="second">{second}</span>
+</h2>
+
+<style>
+    h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    .first {
+        position: relative;
+        color: currentColor;
+        font-size: 30px;
+        z-index: 1;
+    }
+    .second {
+        position: relative;
+        top: -40px;
+        font-size: 70px;
+        font-weight: 750;
+        color: rgba(0, 0, 0, 0.3);
+    }
+</style>

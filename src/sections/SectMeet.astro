@@ -1,0 +1,74 @@
+---
+import Title from "../components/Title.astro";
+---
+
+<section>
+    <Title class="first" first="Who are we?" second="Meet" />
+    <p class="descripiton">
+        Our compony makes cool designs and branding. We make it with high
+        quality. We have made cool companys and we are cool.
+    </p>
+    <div class="blocks">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+    </div>
+</section>
+
+<style>
+    section :global(h2) {
+        color: white;
+    }
+    section {
+        background-color: #ff6969;
+        min-height: 100vh;
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        z-index: 0;
+    }
+    .descripiton {
+        color: white;
+        max-width: 80%;
+    }
+    .blocks {
+        position: absolute;
+        inset: 0;
+        left: auto;
+        width: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 0 1rem;
+        z-index: -1;
+    }
+    .block {
+        border-radius: 0 1rem;
+        box-shadow: 5px 5px 1px black;
+    }
+    .block:nth-child(1) {
+        width: 60%;
+        align-self: flex-end;
+        aspect-ratio: 1;
+        background-color: #547bc6;
+    }
+    .block:nth-child(2) {
+        width: 40%;
+        align-self: center;
+        aspect-ratio: 1;
+        background-color: #3992b9;
+    }
+    .block:nth-child(3) {
+        width: 70%;
+        align-self: flex-start;
+        aspect-ratio: 4/3;
+        background-color: #e26fc2;
+    }
+    @media (max-width: 1200px) {
+        section {
+            min-height: 50vh;
+        }
+    }
+</style>

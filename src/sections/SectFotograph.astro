@@ -1,0 +1,78 @@
+---
+import man from "../img/pictures/4th-section-img.png";
+import { Image, getImage } from "astro:assets";
+import wave from "../img/pictures/4th-section-bg.svg";
+const optimizedBackground = await getImage({ src: wave, format: "webp" });
+---
+
+<section>
+    <div class="left"><Image src={man} class="man" alt="fotographer" /></div>
+    <div
+        class="right"
+        style=`background-image: url(${optimizedBackground.src});`
+    >
+        <h2>And also...</h2>
+        <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+            dicta, quis maiores doloremque cum maxime inventore.
+        </p>
+        <p class="bg-text">We are full of Suprises</p>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: #3d4677;
+        min-height: 100vh;
+        display: flex;
+        position: relative;
+        z-index: 0;
+    }
+    .description,
+    h2 {
+        color: white;
+        text-align: right;
+    }
+    .bg-text {
+        z-index: -1;
+        filter: opacity(30%);
+        position: absolute;
+        inset: 0;
+        font-size: 100px;
+        padding: 0 100px;
+        font-weight: 900;
+    }
+    .man {
+        height: 100%;
+        width: 100%;
+        object-position: center;
+        object-fit: cover;
+    }
+    .left {
+        flex: 1 0 auto;
+    }
+    .right {
+        flex: 1 1 auto;
+        padding: 0 2rem;
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    @media (max-width: 1200px) {
+        section {
+            flex-direction: column;
+        }
+        .right {
+            min-height: 100vh;
+        }
+        .bg-text {
+            font-size: 50px;
+            padding: 0 50px;
+            top: auto;
+        }
+    }
+</style>

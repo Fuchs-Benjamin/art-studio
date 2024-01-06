@@ -1,0 +1,31 @@
+---
+// Supports weights 300-800
+import "@fontsource-variable/open-sans";
+import Menu from "../components/Menu.astro";
+const { title = "Art Studio" } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <Menu />
+        <slot />
+    </body>
+</html>
+
+<style is:global>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        min-width: 0;
+    }
+    body {
+        font-family: "Open Sans Variable", sans-serif;
+    }
+</style>

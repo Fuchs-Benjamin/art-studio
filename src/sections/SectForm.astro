@@ -1,0 +1,95 @@
+---
+import { getImage } from "astro:assets";
+import leftBg from "../img/pictures/form-left.png";
+import rightBg from "../img/pictures/form-right.png";
+const optLeftBg = await getImage({ src: leftBg, format: "webp" });
+const optRightBg = await getImage({ src: rightBg, format: "webp" });
+---
+
+<section
+    style=`background-image: url(${optLeftBg.src}), url(${optRightBg.src})`
+>
+    <div class="container">
+        <h2>Contact us</h2>
+        <form action="/succesfull">
+            <label>
+                <p>Name</p>
+                <input
+                    class="text-inp"
+                    type="text"
+                    placeholder="example examplivich"
+                />
+            </label>
+            <label>
+                <p>E-Mail</p>
+                <input
+                    class="text-inp"
+                    type="email"
+                    placeholder="example@mail.com"
+                />
+            </label>
+            <label>
+                <p>Who are you</p>
+                <select class="text-inp" name="" id="">
+                    <option value="designer">Designer</option>
+                    <option value="developer">Developer</option>
+                    <option value="photographer">Photographer</option>
+                </select>
+            </label>
+            <label>
+                <p>Agreement</p>
+                <input class="agreement-box" type="checkbox" />
+            </label>
+            <button class="button-buttom" type="submit"> Send</button>
+        </form>
+    </div>
+</section>
+
+<style>
+    section {
+        color: white;
+        min-height: 70vh;
+        font-size: 20px;
+        background-repeat: no-repeat;
+        background-position: left, right;
+        background-size: contain;
+    }
+    form {
+        min-height: 100vh;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: #23536d;
+        padding: 0 10px;
+    }
+    h2 {
+        text-align: right;
+        font-size: 35px;
+    }
+    .text-inp {
+        min-width: 100%;
+        margin-bottom: 20px;
+        min-height: 35px;
+        margin-top: 10px;
+    }
+    .agreement-box {
+        min-height: 20px;
+        min-width: 20px;
+        margin-top: 10px;
+    }
+    .button-buttom {
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        min-width: 150px;
+        min-height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin: auto;
+        cursor: pointer;
+    }
+</style>

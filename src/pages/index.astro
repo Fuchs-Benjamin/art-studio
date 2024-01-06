@@ -1,0 +1,29 @@
+---
+// Supports weights 300-800
+import "@fontsource-variable/open-sans";
+import Menu from "../components/Menu.astro";
+import SectHero from "../sections/SectHero.astro";
+import SectMeet from "../sections/SectMeet.astro";
+import SectDesign from "../sections/SectDesign.astro";
+import SectFotograph from "../sections/SectFotograph.astro";
+import SectPortfolio from "../sections/SectPortfolio.astro";
+import SectForm from "../sections/SectForm.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+	<main>
+		<SectHero />
+		<SectMeet />
+		<SectDesign />
+		<SectFotograph />
+		<SectPortfolio />
+		<SectForm />
+	</main>
+</Layout>
+
+<style>
+	main {
+		padding-left: 80px;
+	}
+</style>

@@ -1,0 +1,102 @@
+---
+
+---
+
+<section>
+    <div class="left">
+        <div class="lt"></div>
+        <div class="rt"></div>
+        <div class="rb"></div>
+        <div class="lb"></div>
+    </div>
+    <div class="right">
+        <h1>
+            <span>Art</span>
+            <br />studio
+        </h1>
+        <div class="labels">
+            <span>photography</span>
+            <span>art</span>
+            <span>design and branding</span>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        /* min-height: 100vh; */
+        display: flex;
+    }
+    .left,
+    .right {
+        flex: 1 1 50%;
+    }
+    .left {
+        display: grid;
+        grid-template-areas:
+            "lt rt"
+            "lb rb";
+    }
+    .left div {
+        aspect-ratio: 1;
+    }
+    .lt {
+        grid-area: lt;
+        background-color: #23536d;
+    }
+    .rt {
+        grid-area: rt;
+        background-color: #fe6969;
+    }
+    .rb {
+        grid-area: rb;
+        background-color: #67c4e1;
+        border-bottom-right-radius: 45%;
+    }
+    .lb {
+        grid-area: lb;
+        background-color: #fee39c;
+    }
+
+    .labels {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 1rem;
+        column-gap: 30px;
+        & span {
+            background-color: #ddd;
+            line-height: 1;
+            padding: 0.5em 1em;
+            text-align: center;
+            font-weight: 700;
+            border-radius: 1em;
+            flex-basis: calc(50% - 1rem);
+            flex-shrink: 1;
+            flex-grow: 1;
+        }
+    }
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    h1 {
+        align-self: flex-end;
+        text-align: right;
+        font-size: 150px;
+        font-size: 20vmin;
+        line-height: 1;
+        & span {
+            font-weight: 300;
+        }
+    }
+    @media (max-width: 1200px) {
+        section {
+            flex-direction: column;
+        }
+        .right {
+            gap: 150px;
+        }
+    }
+</style>
