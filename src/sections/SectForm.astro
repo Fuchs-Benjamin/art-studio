@@ -11,26 +11,30 @@ const optRightBg = await getImage({ src: rightBg, format: "webp" });
 >
     <div class="container">
         <h2>Contact us</h2>
-        <form action="/succesfull">
+        <form action="/succesfull" name="Feedback" netlify>
             <label>
                 <p>Name</p>
                 <input
+                    name="Name"
                     class="text-inp"
                     type="text"
                     placeholder="example examplivich"
+                    required
                 />
             </label>
             <label>
                 <p>E-Mail</p>
                 <input
+                    name="E-Mail"
                     class="text-inp"
                     type="email"
                     placeholder="example@mail.com"
+                    required
                 />
             </label>
             <label>
                 <p>Who are you</p>
-                <select class="text-inp" name="" id="">
+                <select class="text-inp" name="Role" id="" required>
                     <option value="designer">Designer</option>
                     <option value="developer">Developer</option>
                     <option value="photographer">Photographer</option>
@@ -38,7 +42,7 @@ const optRightBg = await getImage({ src: rightBg, format: "webp" });
             </label>
             <label>
                 <p>Agreement</p>
-                <input class="agreement-box" type="checkbox" />
+                <input class="agreement-box" type="checkbox" required />
             </label>
             <button class="button-buttom" type="submit"> Send</button>
         </form>
